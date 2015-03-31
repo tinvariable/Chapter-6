@@ -20,7 +20,7 @@ public class RubberLinesPanel extends JPanel
 		setBackground(Color.black);
 		setPreferredSize(new Dimension(400, 200));
 	}
-	public void painComponent(Graphics page)
+	public void paintComponent(Graphics page)
 	{
 		super.paintComponent(page);
 		
