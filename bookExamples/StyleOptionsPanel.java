@@ -3,7 +3,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
-public class StyleOptionsPanel 
+public class StyleOptionsPanel extends JPanel
 {
 	private JLabel saying;
 	private JCheckBox bold, italic;
@@ -22,16 +22,16 @@ public class StyleOptionsPanel
 		bold.addItemListener(listener);
 		italic.addItemListener(listener);
 		
-		StyleListener listener = new StyleListener();
-		bold.addItemListener(listener);
-		italic.addItemListener(listener);
+		StyleListener listener1 = new StyleListener();
+		bold.addItemListener(listener1);
+		italic.addItemListener(listener1);
 		
 		add(saying);
 		add(bold);
 		add(italic);
 		
 		setBackground(Color.cyan);
-		setPreferreSize(new Dimension(300, 100));
+		setPreferredSize(new Dimension(300, 100));
 	}
 	private class StyleListener implements ItemListener
 	{
