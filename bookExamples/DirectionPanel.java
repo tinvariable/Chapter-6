@@ -1,6 +1,5 @@
 package bookExamples;
 import javax.swing.*;
-
 import java.awt.*;
 import java.awt.Event.*;
 import java.awt.event.KeyEvent;
@@ -76,14 +75,6 @@ public class DirectionPanel extends JPanel
 			// TODO Auto-generated method stub
 			
 		}
-	}
-	public void keyTyped(KeyEvent event)
-	{
-		
-	}
-	public void keyReleased(KeyEvent event)
-	{
-		
 	}
 
 }
