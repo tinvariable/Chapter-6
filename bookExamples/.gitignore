@@ -41,3 +41,8 @@
 /SlideColor.class
 /SlideColorPanel$SliderListener.class
 /SlideColorPanel.class
+/LightBulb.class
+/LightBulbPanel.class
+/LightBulbControls.class
+/LightBulbControls$OffListener.class
+/LightBulbControls$OnListener.class
