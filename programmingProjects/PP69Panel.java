@@ -5,14 +5,14 @@ import java.awt.event.*;
 
 public class PP69Panel 
 {
-	private JComboBox d1;
-	private JComboBox d2;
-	private JComboBox d3;
+	private JDialog d1;
+	private JDialog d2;
+	private JDialog d3;
 	public PP69Panel()
 	{
-		d1 = new JComboBox();
-		d2 = new JComboBox();
-		d3 = new JComboBox();
+		d1 = new JDialog();
+		d2 = new JDialog();
+		d3 = new JDialog();
 	
 		
 		
