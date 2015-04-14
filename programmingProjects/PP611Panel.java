@@ -4,67 +4,63 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.awt.event.MouseMotionListener;
 
 public class PP611Panel extends JPanel
 {
-	private int x;
-	private int y;
-	private int x2;
-	private int y2;
-	private int xf;
-	private int yf;
+	private Point point = null;
+	private Point point2 = null;
+	private double odo;
+	private double distance;
+	
 	public PP611Panel()
 	{
+		addMouseMotionListener(new Listener());
 		setPreferredSize(new Dimension(300, 200));
-		addMouseListener(new Listener());
-		xf = x-x2;
-		yf = y-y2;
+		
+		
 		
 	}
-	private class Listener implements MouseListener
+	private class Listener implements MouseMotionListener
 	{
 
 		@Override
-		public void mouseClicked(MouseEvent arg0) 
+		public void mouseDragged(MouseEvent e) 
 		{
-			
+			// TODO Auto-generated method stub
 			
 		}
 
 		@Override
-		public void mouseEntered(MouseEvent arg0) 
+		public void mouseMoved(MouseEvent e) 
 		{
-			
+			if(point == null)
+			{
+				point = e.getPoint();
+			}
+			if(point2 == null)
+			{
+				point2 = e.getPoint();
+			}
+			else
+			{
+				point = point2;
+				point2 = e.getPoint();
+				repaint();
+			}
 			
 			
 		}
 
-		@Override
-		public void mouseExited(MouseEvent arg0) 
+	}
+	public void paintComponent (Graphics g)
+	{
+		super.paintComponent(g);
+		if(point != null && point2 != null)
 		{
-			
-			
-			
+			distance = Math.sqrt(Math.pow(point2.y-point.y, 2) + Math.pow(point2.x-point.x, 2));
 		}
-
-		@Override
-		public void mousePressed(MouseEvent arg0) 
-		{
-			x = getX();
-			y = getY();
-			
-			
-		}
-
-		@Override
-		public void mouseReleased(MouseEvent arg0) 
-		{
-			x2 = getX();
-			y2 = getY();
-			System.out.println("Distance Traveled: " +xf+yf);
-			
-			
-		}
-
-}
+		odo += distance;
+		g.drawString("Distance: " +odo, 20, 20);		
+	}
 }

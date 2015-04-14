@@ -37,7 +37,7 @@ public class PP65Panel extends JPanel
 		
 		setBackground(Color.black);
 		setPreferredSize(new Dimension(WIDTH, HEIGHT));
-		setMinimumSize(getMinimumSize());
+		
 		setFocusable(true);
 		
 	}
@@ -55,19 +55,31 @@ public class PP65Panel extends JPanel
 			{
 			case KeyEvent.VK_UP:
 				currentImage = up;
+				if(y > 0)
+				{
 				y-= JUMP;
+				}
 				break;
 			case KeyEvent.VK_DOWN:
 				currentImage = down;
+				if(y < getHeight() - IMAGE_SIZE)
+				{
 				y+=JUMP;
+				}
 				break;
 			case KeyEvent.VK_LEFT:
 				currentImage = left;
+				if (x > 0)
+				{
 				x-= JUMP;
+				}
 				break;
 			case KeyEvent.VK_RIGHT:
 				currentImage = right;
+				if(x < getWidth() - IMAGE_SIZE)
+				{
 				x+=JUMP;
+				}
 				break;
 			}
 			repaint();

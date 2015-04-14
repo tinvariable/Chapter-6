@@ -81,7 +81,28 @@ public class PP66Panel extends JPanel
 				currentImage = right;
 				x+= JUMP;
 				break;
+			case KeyEvent.VK_Q:
+				currentImage = left;
+				x -= JUMP;
+				y -= JUMP;
+				break;
+			case KeyEvent.VK_E:
+				currentImage = right;
+				x += JUMP;
+				y -= JUMP;
+				break;
+			case KeyEvent.VK_X:
+				currentImage = right;
+				x += JUMP;
+				y += JUMP;
+				break;
+			case KeyEvent.VK_Z:
+				currentImage = left;
+				x -= JUMP;
+				y += JUMP;
+				break;
 			}
+			
 			repaint();
 		}
 

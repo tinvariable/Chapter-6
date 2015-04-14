@@ -1,20 +1,18 @@
 package programmingProjects;
 import javax.swing.*;
-import java.awt.*;
 
-public class PP67
+public class PP622 extends JFrame
 {
 
 	public static void main(String[] args) 
 	{
-		JFrame frame = new JFrame("PP6.7");
+		JFrame frame = new JFrame("PP6.22");
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
-		frame.getContentPane().add(new PP67Panel());
+		frame.getContentPane().add(new PP622Panel());
 		
 		frame.pack();
 		frame.setVisible(true);
-		
 		
 
 	}

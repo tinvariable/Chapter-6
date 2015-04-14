@@ -7,16 +7,28 @@ import java.awt.event.MouseListener;
 
 public class PP610Panel extends JPanel 
 {
+	private final int HEIGHT = 500;
+	private final int WIDTH = 800;
+	private int x;
+	private int y;
 	public PP610Panel()
 	{
 		addMouseListener(new Listener());
 		
-		setPreferredSize(new Dimension(300, 200));
+		setPreferredSize(new Dimension(WIDTH, HEIGHT));
 	}
 	public void paintComponent(Graphics g)
 	{
 		super.paintComponent(g);
-		g.setColor(Color.red);
+		if(x <= WIDTH * 0.5)
+		{
+			setBackground(Color.red);
+		}
+		else
+		{
+			setBackground(Color.green);
+		}
+		
 		
 	}
 	private class Listener implements MouseListener
@@ -27,19 +39,21 @@ public class PP610Panel extends JPanel
 			if(getX() < 150)
 			{
 				setBackground(Color.red);
-				repaint();
 			}
 			if(getX() > 150)
 			{
 				setBackground(Color.green);
-				repaint();
 			}
+			repaint();
 			
 		}
 
 		@Override
-		public void mouseEntered(MouseEvent arg0) 
+		public void mouseEntered(MouseEvent event) 
 		{
+			x = event.getX();
+			y = event.getY();
+			repaint();
 			
 			
 		}

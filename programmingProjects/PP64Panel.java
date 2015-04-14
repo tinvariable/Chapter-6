@@ -21,7 +21,7 @@ public class PP64Panel extends JPanel
 		resultLabel = new JLabel("---");
 		fahrenheit = new JTextField(5);
 		fahrenheit.addActionListener(new TempListener());
-		submit.addActionListener(new ButtonListener());
+		submit.addActionListener(new TempListener());
 		add(inputLabel);
 		add(fahrenheit);
 		add(outputLabel);
@@ -45,14 +45,6 @@ public class PP64Panel extends JPanel
 			resultLabel.setText(Integer.toString(celsiusTemp));
 		}
 		
-	}
-	private class ButtonListener implements ActionListener
-	{
-		public void actionPerformed(ActionEvent event)
-		{
-			
-			
-		}
 	}
 
 }

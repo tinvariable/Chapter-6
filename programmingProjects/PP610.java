@@ -2,7 +2,7 @@ package programmingProjects;
 import javax.swing.*;
 
 
-public class PP610 extends JFrame 
+public class PP610
 {
 
 	public static void main(String[] args) 

@@ -12,7 +12,7 @@ public class PP616 extends JFrame
 		JFrame frame = new JFrame("Rebound");
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
-		frame.getContentPane().add(new PP16Panel());
+		frame.getContentPane().add(new PP616Panel());
 		
 		frame.pack();
 		frame.setVisible(true);

@@ -13,7 +13,7 @@ import javax.swing.JPanel;
 import javax.swing.Timer;
 
 
-public class PP16Panel extends JPanel 
+public class PP616Panel extends JPanel 
 {
 	private final int WIDTH = 300, HEIGHT = 100;
 	private final int DELAY = 20, IMAGE_SIZE = 35;
@@ -22,7 +22,7 @@ public class PP16Panel extends JPanel
 	private Timer timer;
 	private int x, y, moveX, moveY;
 	
-	public PP16Panel()
+	public PP616Panel()
 	{
 		timer = new Timer(DELAY, new ReboundListener());
 		addMouseListener(new Listener());
@@ -62,10 +62,14 @@ public class PP16Panel extends JPanel
 		@Override
 		public void mouseClicked(MouseEvent e) 
 		{
-			if(x >= 0 || x <= WIDTH-IMAGE_SIZE)
-				moveX = moveX*-1;
-			if (y >= 0 || y <= HEIGHT-IMAGE_SIZE)
-				moveY = moveY*-1;
+			if(timer.isRunning() == true)
+			{
+				timer.stop();
+			}
+			else
+			{
+				timer.start();
+			}
 			
 			
 		}
